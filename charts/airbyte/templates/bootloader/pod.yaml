@@ -5,9 +5,12 @@ metadata:
   name: {{ include "common.names.fullname" . }}-bootloader
   labels:
     {{- include "airbyte.labels" . | nindent 4 }}
-  annotations:
-    helm.sh/hook: pre-install,pre-upgrade
-    helm.sh/hook-weight: "0"
+  # Not ideal, however, otherwise there is no way to bootstrap server that uses sealed secrets:
+  # https://stackoverflow.com/questions/70929903/how-to-prevent-helm-from-renaming-the-resource-that-uses-hooks
+  #
+  # annotations:
+  #   helm.sh/hook: pre-install,pre-upgrade
+  #   helm.sh/hook-weight: "0"
 spec:
   restartPolicy: Never
   containers:
