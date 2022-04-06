@@ -5,13 +5,14 @@ metadata:
   name: {{ include "common.names.fullname" . }}-bootloader
   labels:
     {{- include "airbyte.labels" . | nindent 4 }}
-  # Not ideal, however, otherwise there is no way to bootstrap server that uses sealed secrets:
-  # https://stackoverflow.com/questions/70929903/how-to-prevent-helm-from-renaming-the-resource-that-uses-hooks
-  #
-  # annotations:
-  #   helm.sh/hook: pre-install,pre-upgrade
-  #   helm.sh/hook-weight: "0"
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "0"
+    {{- if .Values.bootloader.podAnnotations }}
+      {{- include "common.tplvalues.render" (dict "value" .Values.bootloader.podAnnotations "context" $) | nindent 4 }}
+    {{- end }}
 spec:
+  serviceAccountName: {{ include "airbyte.serviceAccountName" . }}
   restartPolicy: Never
   containers:
     - name: airbyte-bootloader-container
