@@ -3,7 +3,31 @@ entries:
   airbyte:
   - apiVersion: v2
     appVersion: 0.39.18-alpha
-    created: "2022-06-15T11:38:53.429911-04:00"
+    created: "2022-06-15T14:26:15.268409-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Helm chart to deploy airbyte
+    digest: 0399945e94c80e55f8eb372ec685676d8e05d22c987b8d1838106cc19a51b1a0
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
+    appVersion: 0.39.18-alpha
+    created: "2022-06-15T14:26:15.25341-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -23,11 +47,11 @@ entries:
     name: airbyte
     type: application
     urls:
-    - airbyte-0.3.5.tgz
+    - airbyte-0.3.6.tgz/airbyte-0.3.5.tgz
     version: 0.3.5
   - apiVersion: v2
     appVersion: 0.35.12-alpha
-    created: "2022-06-15T11:38:53.417587-04:00"
+    created: "2022-06-15T14:26:15.241951-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -47,11 +71,11 @@ entries:
     name: airbyte
     type: application
     urls:
-    - airbyte-0.3.1.tgz
+    - airbyte-0.3.6.tgz/airbyte-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.35.12-alpha
-    created: "2022-06-15T11:38:53.407159-04:00"
+    created: "2022-06-15T14:26:15.233197-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -71,14 +95,14 @@ entries:
     name: airbyte
     type: application
     urls:
-    - airbyte-0.3.0.tgz
+    - airbyte-0.3.6.tgz/airbyte-0.3.0.tgz
     version: 0.3.0
   common:
   - annotations:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-15T11:38:53.431148-04:00"
+    created: "2022-06-15T14:26:15.269161-04:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts. This chart is not deployable by itself.
     digest: 612ba0ee47eecb204499b7021508c8ebff38d8b50899be717de3e44e7aa78aec
     home: https://github.com/bitnami/charts/tree/master/bitnami/common
@@ -98,14 +122,14 @@ entries:
     - https://www.bitnami.com/
     type: library
     urls:
-    - charts/common-1.16.0.tgz
+    - airbyte-0.3.6.tgz/charts/common-1.16.0.tgz
     version: 1.16.0
   minio:
   - annotations:
       category: Infrastructure
     apiVersion: v2
     appVersion: 2022.6.11
-    created: "2022-06-15T11:38:53.434111-04:00"
+    created: "2022-06-15T14:26:15.272475-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -130,14 +154,14 @@ entries:
     - https://github.com/bitnami/bitnami-docker-minio
     - https://min.io
     urls:
-    - charts/minio-11.7.4.tgz
+    - airbyte-0.3.6.tgz/charts/minio-11.7.4.tgz
     version: 11.7.4
   postgresql:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 11.14.0
-    created: "2022-06-15T11:38:53.438108-04:00"
+    created: "2022-06-15T14:26:15.2759-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -163,6 +187,6 @@ entries:
     - https://github.com/bitnami/bitnami-docker-postgresql
     - https://www.postgresql.org/
     urls:
-    - charts/postgresql-10.16.2.tgz
+    - airbyte-0.3.6.tgz/charts/postgresql-10.16.2.tgz
     version: 10.16.2
-generated: "2022-06-15T11:38:53.395189-04:00"
+generated: "2022-06-15T14:26:15.221096-04:00"
