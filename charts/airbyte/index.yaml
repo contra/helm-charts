@@ -2,8 +2,80 @@ apiVersion: v1
 entries:
   airbyte:
   - apiVersion: v2
+    appVersion: 0.39.23-alpha
+    created: "2022-06-23T13:31:27.013694-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Helm chart to deploy airbyte
+    digest: eb2303e0830f0afe3b6081da242dea73e78b25bc69c8835e8beb895a142f452a
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.3.7.tgz
+    version: 0.3.7
+  - apiVersion: v2
+    appVersion: 0.39.18-alpha
+    created: "2022-06-23T13:31:26.985638-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Helm chart to deploy airbyte
+    digest: 0399945e94c80e55f8eb372ec685676d8e05d22c987b8d1838106cc19a51b1a0
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
+    appVersion: 0.39.18-alpha
+    created: "2022-06-23T13:31:26.964901-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Helm chart to deploy airbyte
+    digest: 144075e759cbe852b56d423f47dd796823280db6498c2b795e902359f135bc17
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.3.5.tgz
+    version: 0.3.5
+  - apiVersion: v2
     appVersion: 0.35.12-alpha
-    created: "2022-01-31T12:14:06.423369-05:00"
+    created: "2022-06-23T13:31:26.950665-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -27,7 +99,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.35.12-alpha
-    created: "2022-01-31T12:14:06.414595-05:00"
+    created: "2022-06-23T13:31:26.936148-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -53,11 +125,10 @@ entries:
   - annotations:
       category: Infrastructure
     apiVersion: v2
-    appVersion: 1.10.0
-    created: "2022-01-31T12:14:06.423957-05:00"
-    description: A Library Helm Chart for grouping common logic between bitnami charts.
-      This chart is not deployable by itself.
-    digest: d13f6834adeb4d8d9cf94d2149680b08006543ab88944192f236decebd6313ae
+    appVersion: 1.16.0
+    created: "2022-06-23T13:31:27.01597-04:00"
+    description: A Library Helm Chart for grouping common logic between bitnami charts. This chart is not deployable by itself.
+    digest: 612ba0ee47eecb204499b7021508c8ebff38d8b50899be717de3e44e7aa78aec
     home: https://github.com/bitnami/charts/tree/master/bitnami/common
     icon: https://bitnami.com/downloads/logos/bitnami-mark.png
     keywords:
@@ -67,32 +138,30 @@ entries:
     - function
     - bitnami
     maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
     name: common
     sources:
     - https://github.com/bitnami/charts
-    - http://www.bitnami.com/
+    - https://www.bitnami.com/
     type: library
     urls:
-    - charts/common-1.10.1.tgz
-    version: 1.10.1
+    - charts/common-1.16.0.tgz
+    version: 1.16.0
   minio:
   - annotations:
       category: Infrastructure
     apiVersion: v2
-    appVersion: 2021.9.3
-    created: "2022-01-31T12:14:06.426501-05:00"
+    appVersion: 2022.6.11
+    created: "2022-06-23T13:31:27.02132-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       tags:
       - bitnami-common
       version: 1.x.x
-    description: Bitnami Object Storage based on MinIO&reg; is an object storage server,
-      compatible with Amazon S3 cloud storage service, mainly used for storing unstructured
-      data (such as photos, videos, log files, etc.)
-    digest: 8eb8c9056b8c2c64570976ad7f51fa7b71486012c8f7ba965100b369fa58ff4b
+    description: MinIO(R) is an object storage server, compatible with Amazon S3 cloud storage service, mainly used for storing unstructured data (such as photos, videos, log files, etc.).
+    digest: 4a4370b34b3380aaa96663429d3c6bd970838855589e4310e6bce968ee9cc1e7
     home: https://github.com/bitnami/charts/tree/master/bitnami/minio
     icon: https://bitnami.com/assets/stacks/minio/img/minio-stack-220x234.png
     keywords:
@@ -102,28 +171,27 @@ entries:
     - s3
     - cluster
     maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
     name: minio
     sources:
     - https://github.com/bitnami/bitnami-docker-minio
     - https://min.io
     urls:
-    - charts/minio-7.3.2.tgz
-    version: 7.3.2
+    - charts/minio-11.7.4.tgz
+    version: 11.7.4
   postgresql:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 11.14.0
-    created: "2022-01-31T12:14:06.429256-05:00"
+    created: "2022-06-23T13:31:27.025281-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 1.x.x
-    description: Chart for PostgreSQL, an object-relational database management system
-      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: bf390d423e45c512228ad22c2e5899acfc420c0bb424a169ff8770ce3cb05495
+    description: Chart for PostgreSQL, an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: 6012be8e28cad57f87320c1b035b668c6d6d0325e384ce4732ec154e452dbca0
     home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
     icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
     keywords:
@@ -143,6 +211,6 @@ entries:
     - https://github.com/bitnami/bitnami-docker-postgresql
     - https://www.postgresql.org/
     urls:
-    - charts/postgresql-10.13.9.tgz
-    version: 10.13.9
-generated: "2022-01-31T12:14:06.403751-05:00"
+    - charts/postgresql-10.16.2.tgz
+    version: 10.16.2
+generated: "2022-06-23T13:31:26.920795-04:00"
