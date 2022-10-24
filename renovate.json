@@ -1,0 +1,54 @@
+{
+  "automerge": false,
+  "dependencyDashboard": true,
+  "enabledManagers": [
+    "helmv3"
+  ],
+  "labels": [
+    "dependency-update"
+  ],
+  "packageRules": [
+    {
+      "addLabels": [
+        "self-review"
+      ],
+      "groupName": "all minor dependencies",
+      "groupSlug": "all-minor",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ]
+    },
+    {
+      "addLabels": [
+        "major"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    }, 
+    {
+      "enabled": false,
+      "updateTypes": [
+        "patch"
+      ]
+    }
+  ],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 10,
+  "rangeStrategy": "bump",
+  "rebaseWhen": "behind-base-branch",
+  "schedule": [
+    "after 1am on thursday",
+    "before 5am on thursday"
+  ],
+  "timezone": "America/Los_Angeles",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": [
+      "security"
+    ]
+  }
+}
